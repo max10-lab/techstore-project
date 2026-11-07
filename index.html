@@ -2,163 +2,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TechStore | Electronics Shop</title>
-    <style>
-        * { box-sizing: border-box; }
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #222;
-            background: #f5f6fa;
-        }
-        header {
-            background: #14213d;
-            color: white;
-            padding: 22px 7%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-        header h1 { margin: 0; }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-        }
-        .hero {
-            background: #e5eaf5;
-            text-align: center;
-            padding: 65px 20px;
-        }
-        .hero h2 { font-size: 36px; }
-        .hero button, .product button {
-            background: #fca311;
-            border: 0;
-            padding: 12px 20px;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-        .products {
-            padding: 40px 7%;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 22px;
-        }
-        .product {
-            background: white;
-            padding: 20px;
-            text-align: center;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px #ddd;
-        }
-        .product .emoji { font-size: 65px; }
-        .product p { color: #666; }
-        footer {
-            background: #14213d;
-            color: white;
-            text-align: center;
-            padding: 20px;
-            margin-top: 40px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechStore | Electronics</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: Arial, sans-serif; color: #172033; background: #f5f7fb; }
+header {
+  background: #101828; color: white; padding: 20px 7%;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.logo { font-size: 25px; font-weight: bold; }
+nav a { color: white; text-decoration: none; margin-left: 22px; }
+.hero {
+  background: #172b4d; color: white; padding: 85px 8%;
+  text-align: center;
+}
+.hero h1 { font-size: 42px; margin-bottom: 15px; }
+.hero p { font-size: 18px; margin-bottom: 25px; }
+.hero button, .product button {
+  background: #2563eb; color: white; border: none;
+  padding: 12px 22px; border-radius: 6px; cursor: pointer;
+}
+section { padding: 55px 7%; }
+h2 { text-align: center; margin-bottom: 30px; }
+.products {
+  display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap: 25px;
+}
+.product {
+  background: white; padding: 20px; text-align: center;
+  border-radius: 12px; box-shadow: 0 3px 12px #0001;
+}
+.product img { width: 100%; height: 170px; object-fit: contain; }
+.product h3 { margin: 15px 0 8px; }
+.product p { margin-bottom: 15px; color: #2563eb; font-weight: bold; }
+footer { background: #101828; color: white; text-align: center; padding: 25px; }
+</style>
 </head>
 <body>
-<header>
-    <h1>TechStore</h1>
-    
-<nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About Us</a>
-    <a href="contact.html">Contact</a>
-</nav>
 
+<header>
+  <div class="logo">TechStore.</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#products">🛒 Cart</a>
+  </nav>
 </header>
 
-<section class="hero" id="home">
-    <h2>Welcome to TechStore</h2>
-    <p>Discover the latest technology at affordable prices.</p>
-    <button onclick="document.getElementById('products').scrollIntoView()">
-        Shop Now
-    </button>
-</section>
+<div class="hero" id="home">
+  <h1>Upgrade Your Technology</h1>
+  <p>Discover the latest electronics and gadgets at great prices.</p>
+  <button onclick="document.getElementById('products').scrollIntoView()">Shop Now</button>
+</div>
 
-<section class="products" id="products">
-    <h2>Our Products</h2>
-    <div class="grid">
-        <div class="product">
-            <div class="emoji">💻</div>
-            <h3>Laptop</h3>
-            <p>High-performance laptop for everyday use.</p>
-            <h3>₩850,000</h3>
-            <button onclick="addToCart('Laptop',850000)">Add to Cart</button>
-        </div>
-        <div class="product">
-            <div class="emoji">📱</div>
-            <h3>Smartphone</h3>
-            <p>Modern smartphone with advanced features.</p>
-            <h3>₩650,000</h3>
-            <button onclick="addToCart('Smartphone',650000)">Add to Cart</button>
-        </div>
-        <div class="product">
-            <div class="emoji">🎧</div>
-            <h3>Headphones</h3>
-            <p>Enjoy clear sound and comfortable listening.</p>
-            <h3>₩120,000</h3>
-            <button onclick="addToCart('Headphones',120000)">Add to Cart</button>
-        </div>
-        <div class="product">
-            <div class="emoji">⌚</div>
-            <h3>Smartwatch</h3>
-            <p>Track your daily activities and notifications.</p>
-            <h3>₩180,000</h3>
-            <button onclick="addToCart('Smartwatch',180000)">Add to Cart</button>
-        </div>
+<section id="products">
+  <h2>Featured Products</h2>
+  <div class="products">
+
+    <div class="product">
+      <img src="https://placehold.co/300x200?text=Laptop" alt="Laptop">
+      <h3>Premium Laptop</h3>
+      <p>$899.00</p>
+      <button onclick="addToCart('Premium Laptop')">Add to Cart</button>
     </div>
+
+    <div class="product">
+      <img src="https://placehold.co/300x200?text=Headphones" alt="Headphones">
+      <h3>Wireless Headphones</h3>
+      <p>$129.00</p>
+      <button onclick="addToCart('Wireless Headphones')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://placehold.co/300x200?text=Smartphone" alt="Smartphone">
+      <h3>Smartphone</h3>
+      <p>$699.00</p>
+      <button onclick="addToCart('Smartphone')">Add to Cart</button>
+    </div>
+
+  </div>
 </section>
 
-<section class="products" id="cart">
-    <h2>Shopping Cart</h2>
-    <div id="cart-items">Your cart is empty.</div>
-    <h3 id="total">Total: ₩0</h3>
-    <button onclick="checkout()">Proceed to Checkout</button>
+<section id="about">
+  <h2>About TechStore</h2>
+  <p style="text-align:center">Your destination for modern technology, quality electronics and everyday gadgets.</p>
 </section>
 
-<section class="products" id="about">
-    <h2>About TechStore</h2>
-    <p>TechStore is a online electronics store created for a GA4 tracking audit project. It allows users to explore products, add items to a cart, and test a checkout experience.</p>
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p style="text-align:center">Email: support@techstore.example</p>
 </section>
 
 <footer>
-    <p>© 2026 TechStore |  Shopping Website</p>
+  <p>© 2026 TechStore. All rights reserved.</p>
 </footer>
 
 <script>
-    let cart = [];
-    let total = 0;
-
-    function addToCart(name, price) {
-        cart.push({name, price});
-        total += price;
-        document.getElementById('cart-count').textContent = cart.length;
-        document.getElementById('cart-items').innerHTML =
-            cart.map(item => `<p>${item.name} - ₩${item.price.toLocaleString()}</p>`).join('');
-        document.getElementById('total').textContent =
-            'Total: ₩' + total.toLocaleString();
-    }
-
-    function checkout() {
-        if (cart.length === 0) {
-            alert('Your cart is empty!');
-            return;
-        }
-        alert(' checkout started! No payment will be collected.');
-    }
+function addToCart(product) {
+  alert(product + " added to your cart!");
+}
 </script>
+
 </body>
 </html>
