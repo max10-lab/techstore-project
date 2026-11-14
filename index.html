@@ -4,15 +4,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TechStore | Premium Technology</title>
+<title>TechStore | Home</title>
+
+<!-- GA4 Tracking Code -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LQ40WMS4C3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-LQ40WMS4C3');
 </script>
+
 <style>
 * {
   margin: 0;
@@ -24,6 +26,7 @@ body {
   font-family: Arial, sans-serif;
   background: #f7f8fc;
   color: #172033;
+  padding-bottom: 70px;
 }
 
 header {
@@ -33,7 +36,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
 }
 
 .logo {
@@ -41,30 +43,8 @@ header {
   font-weight: 800;
 }
 
-.logo span { color: #4385ff; }
-
-nav {
-  display: flex;
-  gap: 25px;
-}
-
-nav a {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-.search {
-  padding: 11px 15px;
-  border-radius: 25px;
-  border: none;
-  width: 210px;
-}
-
-.cart {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
+.logo span {
+  color: #4385ff;
 }
 
 .hero {
@@ -78,7 +58,9 @@ nav a {
   gap: 30px;
 }
 
-.hero-content { max-width: 500px; }
+.hero-content {
+  max-width: 500px;
+}
 
 .hero small {
   color: #8db8ff;
@@ -121,75 +103,6 @@ section {
   padding: 65px 8%;
 }
 
-.section-heading {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 30px;
-}
-
-.section-heading h2 { font-size: 29px; }
-
-.categories {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.category {
-  background: white;
-  padding: 30px 15px;
-  text-align: center;
-  border-radius: 12px;
-  box-shadow: 0 4px 18px #00000008;
-  font-weight: bold;
-}
-
-.category span {
-  display: block;
-  font-size: 35px;
-  margin-bottom: 12px;
-}
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
-}
-
-.product {
-  background: white;
-  border-radius: 13px;
-  padding: 18px;
-  box-shadow: 0 5px 20px #0000000c;
-  transition: transform .25s, box-shadow .25s;
-}
-
-.product:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 12px 25px #00000015;
-}
-
-.product img {
-  width: 100%;
-  height: 210px;
-  object-fit: contain;
-  margin-bottom: 15px;
-}
-
-.product small { color: #777; }
-
-.product h3 { margin: 10px 0; }
-
-.price {
-  color: #2868df;
-  font-size: 20px;
-  font-weight: bold;
-  margin: 12px 0;
-}
-
-.product button { width: 100%; }
-
 .promo {
   background: #eaf1ff;
   border-radius: 16px;
@@ -219,48 +132,45 @@ footer p {
   margin-top: 12px;
 }
 
-@media(max-width: 750px) {
-  header { flex-wrap: wrap; }
-  nav { order: 3; width: 100%; justify-content: center; flex-wrap: wrap; }
-  .search { width: 140px; }
-  .hero { flex-direction: column; text-align: center; }
-  .hero img { width: 100%; }
-  .categories { grid-template-columns: repeat(2, 1fr); }
-  .products { grid-template-columns: 1fr; }
-}
-  
+/* Bottom Navigation */
 .bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 12px 0;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.12);
-    z-index: 1000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 0;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.12);
+  z-index: 1000;
 }
 
 .bottom-nav a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    text-decoration: none;
-    color: #555;
-    font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: #555;
+  font-size: 12px;
 }
 
 .bottom-nav a span {
-    font-size: 24px;
+  font-size: 24px;
 }
 
-body {
-    padding-bottom: 70px;
-}
+@media(max-width: 750px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
 
+  .hero img {
+    width: 100%;
+  }
+}
 </style>
 </head>
 
@@ -268,166 +178,46 @@ body {
 
 <header>
   <div class="logo">Tech<span>Store.</span></div>
-
- <nav>
-    
-<nav class="bottom-nav">
-    <a href="index.html">
-        <span>⌂</span>
-        Home
-    </a>
-    <a href="products.html">
-        <span>▣</span>
-        Products
-    </a>
-    <a href="about.html">
-        <span>ⓘ</span>
-        About
-    </a>
-    <a href="contact.html">
-        <span>♙</span>
-        Contact
-    </a>
-</nav>
-
-</nav>
-
-  <input class="search" id="search"
-    type="search" placeholder="Search products...">
-
-  <a class="cart" href="#products">
-    🛒 Cart (<span id="cartCount">0</span>)
-  </a>
 </header>
 
-<div class="hero" id="home">
+<!-- Homepage Welcome Section -->
+<div class="hero">
   <div class="hero-content">
     <small>WELCOME TO TECHSTORE</small>
+
     <h1>Technology That Moves You Forward.</h1>
+
     <p>
       Discover innovative electronics, premium gadgets
       and the latest technology for your everyday life.
+      We make finding modern technology simple and convenient.
     </p>
-    <a href="#products" class="btn">Explore Products →</a>
+
+    <a href="products.html" class="btn">
+      Explore Products →
+    </a>
   </div>
 
-  <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=900"
-       alt="Modern electronics">
+  <img
+    src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=900"
+    alt="Modern electronics">
 </div>
 
-<section id="categories">
-  <div class="section-heading">
-    <h2>Shop by Category</h2>
-  </div>
-
-  <div class="categories">
-    <div class="category"><span>💻</span>Laptops</div>
-    <div class="category"><span>📱</span>Smartphones</div>
-    <div class="category"><span>🎧</span>Audio</div>
-    <div class="category"><span>⌚</span>Accessories</div>
-  </div>
-</section>
-
-<section id="products">
-  <div class="section-heading">
-    <h2>Featured Products</h2>
-  </div>
-
-  <div class="products" id="productList">
-
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600"
-           alt="Laptop">
-      <small>LAPTOPS</small>
-      <h3>Premium Laptop</h3>
-      <div class="price">$899.00</div>
-      <button class="btn" onclick="addToCart('Premium Laptop')">Add to Cart</button>
-    </div>
-
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600"
-           alt="Headphones">
-      <small>AUDIO</small>
-      <h3>Wireless Headphones</h3>
-      <div class="price">$129.00</div>
-      <button class="btn" onclick="addToCart('Wireless Headphones')">Add to Cart</button>
-    </div>
-
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600"
-           alt="Smartphone">
-      <small>SMARTPHONES</small>
-      <h3>Modern Smartphone</h3>
-      <div class="price">$699.00</div>
-      <button class="btn" onclick="addToCart('Modern Smartphone')">Add to Cart</button>
-    </div>
-    
-<div class="product">
-  <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600" alt="Tablet">
-  <small>TABLETS</small>
-  <h3>Premium Tablet</h3>
-  <div class="price">$499.00</div>
-  <button class="btn" onclick="addToCart('Premium Tablet')">Add to Cart</button>
-</div>
-
-<div class="product">
-  <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" alt="Smartwatch">
-  <small>ACCESSORIES</small>
-  <h3>Smartwatch</h3>
-  <div class="price">$199.00</div>
-  <button class="btn" onclick="addToCart('Smartwatch')">Add to Cart</button>
-</div>
-
-<div class="product">
-  <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?w=600" alt="Keyboard">
-  <small>GAMING</small>
-  <h3>Gaming Keyboard</h3>
-  <div class="price">$89.00</div>
-  <button class="btn" onclick="addToCart('Gaming Keyboard')">Add to Cart</button>
-</div>
-
-<div class="product">
-  <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?w=600" alt="Mouse">
-  <small>ACCESSORIES</small>
-  <h3>Wireless Mouse</h3>
-  <div class="price">$49.00</div>
-  <button class="btn" onclick="addToCart('Wireless Mouse')">Add to Cart</button>
-</div>
-
-<div class="product">
-  <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600" alt="Camera">
-  <small>CAMERAS</small>
-  <h3>Digital Camera</h3>
-  <div class="price">$599.00</div>
-  <button class="btn" onclick="addToCart('Digital Camera')">Add to Cart</button>
-</div>
-
-<div class="product">
-  <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600" alt="Speaker">
-  <small>AUDIO</small>
-  <h3>Bluetooth Speaker</h3>
-  <div class="price">$79.00</div>
-  <button class="btn" onclick="addToCart('Bluetooth Speaker')">Add to Cart</button>
-</div>
-
-
-  </div>
-</section>
-
-<section id="about">
+<!-- Homepage Introduction -->
+<section>
   <div class="promo">
     <h2>Technology Made Simple.</h2>
-    <p>Explore quality products and discover your next favourite gadget.</p>
-    <a href="#products" class="btn">Shop Now</a>
-  </div>
-</section>
-  <section>
-  <h2>Download Our Product Catalog</h2>
-  <p>Explore all our featured products.</p>
 
-  <a href="TechStore_Product_Catalog.pdf" download>
-    Download Product Catalog (PDF)
-  </a>
+    <p>
+      Welcome to TechStore, your destination for modern
+      technology and everyday electronic products.
+      Explore our collection and find the right technology for you.
+    </p>
+
+    <a href="products.html" class="btn">
+      Shop Now
+    </a>
+  </div>
 </section>
 
 <footer>
@@ -436,24 +226,28 @@ body {
   <p>© 2026 TechStore. All rights reserved.</p>
 </footer>
 
-<script>
-let cartCount = 0;
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+  <a href="index.html">
+    <span>⌂</span>
+    Home
+  </a>
 
-function addToCart(product) {
-  cartCount++;
-  document.getElementById("cartCount").textContent = cartCount;
-  alert(product + " added to your cart!");
-}
+  <a href="products.html">
+    <span>▣</span>
+    Products
+  </a>
 
-document.getElementById("search").addEventListener("input", function() {
-  const query = this.value.toLowerCase();
+  <a href="about.html">
+    <span>ⓘ</span>
+    About
+  </a>
 
-  document.querySelectorAll(".product").forEach(function(item) {
-    item.style.display = item.textContent.toLowerCase().includes(query)
-      ? "block" : "none";
-  });
-});
-</script>
+  <a href="contact.html">
+    <span>♙</span>
+    Contact
+  </a>
+</nav>
 
 </body>
 </html>
