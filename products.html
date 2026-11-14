@@ -1,148 +1,228 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products | TechStore</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f4f6f9;
-            color: #222;
-        }
-        header {
-            background: #14213d;
-            color: white;
-            padding: 22px;
-            text-align: center;
-        }
-        nav {
-            background: #203354;
-            padding: 15px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 15px;
-        }
-        .container {
-            max-width: 1000px;
-            margin: 35px auto;
-            padding: 20px;
-        }
-        .products {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-        }
-        .product {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            text-align: center;
-            box-shadow: 0 2px 8px #ddd;
-        }
-        .product h3 {
-            color: #14213d;
-        }
-        .price {
-            color: #0077b6;
-            font-weight: bold;
-        }
-        footer {
-            background: #14213d;
-            color: white;
-            text-align: center;
-            padding: 18px;
-            margin-top: 40px;
-        }
-        
-.bottom-nav {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 12px 0;
-    box-shadow: 0 -2px 10px rgba(0,0,0,0.12);
-    z-index: 1000;
-}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechStore | Products</title>
 
-.bottom-nav a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    text-decoration: none;
-    color: #555;
-    font-size: 12px;
-}
-
-.bottom-nav a span {
-    font-size: 24px;
-}
-
-body {
-    padding-bottom: 70px;
-}
-
-    </style>
+<!-- GA4 tracking: keep this code -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-LQ40WMS4C3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-LQ40WMS4C3');
 </script>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f7f8fc;
+  color: #172033;
+  padding-bottom: 70px;
+}
+
+header {
+  background: #101827;
+  color: white;
+  padding: 20px 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 800;
+}
+
+.logo span {
+  color: #4385ff;
+}
+
+.search {
+  padding: 11px 15px;
+  border-radius: 25px;
+  border: none;
+  width: 210px;
+}
+
+.cart {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+section {
+  padding: 65px 8%;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  font-size: 29px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+.product {
+  background: white;
+  border-radius: 13px;
+  padding: 18px;
+  box-shadow: 0 5px 20px #0000000c;
+  transition: transform .25s, box-shadow .25s;
+}
+
+.product:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 12px 25px #00000015;
+}
+
+.product img {
+  width: 100%;
+  height: 210px;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.product small {
+  color: #777;
+}
+
+.product h3 {
+  margin: 10px 0;
+}
+
+.price {
+  color: #2868df;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 12px 0;
+}
+
+.btn {
+  display: inline-block;
+  background: #3478f6;
+  color: white;
+  padding: 14px 25px;
+  border-radius: 6px;
+  border: none;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.product button {
+  width: 100%;
+}
+
+.info-section {
+  text-align: center;
+  background: #eaf1ff;
+  border-radius: 16px;
+  padding: 35px 20px;
+  margin-top: 35px;
+}
+
+.info-section p {
+  margin: 12px 0;
+  color: #536079;
+}
+
+.info-section a {
+  color: #2868df;
+  font-weight: bold;
+}
+
+footer {
+  background: #101827;
+  color: white;
+  padding: 35px 8%;
+  text-align: center;
+}
+
+footer p {
+  color: #aeb9cb;
+  margin-top: 12px;
+}
+
+/* Bottom navigation */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 12px 0;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.12);
+  z-index: 1000;
+}
+
+.bottom-nav a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  color: #555;
+  font-size: 12px;
+}
+
+.bottom-nav a span {
+  font-size: 24px;
+}
+
+@media(max-width: 750px) {
+  header {
+    flex-wrap: wrap;
+  }
+
+  .search {
+    width: 140px;
+  }
+
+  .products {
+    grid-template-columns: 1fr;
+  }
+}
+</style>
 </head>
+
 <body>
 
 <header>
-    <h1>TechStore</h1>
-    <p>Explore the Latest Technology</p>
+  <div class="logo">Tech<span>Store.</span></div>
+
+  <input class="search" id="search"
+         type="search" placeholder="Search products...">
+
+  <a class="cart" href="#products">
+    🛒 Cart (<span id="cartCount">0</span>)
+  </a>
 </header>
 
-<nav>
-   
-<nav class="bottom-nav">
-    <a href="index.html">
-        <span>⌂</span>
-        Home
-    </a>
-    <a href="products.html">
-        <span>▣</span>
-        Products
-    </a>
-    <a href="about.html">
-        <span>ⓘ</span>
-        About
-    </a>
-    <a href="contact.html">
-        <span>♙</span>
-        Contact
-    </a>
-</nav>
-
-</nav>
-
-<div class="container">
-    <h2>Our Products</h2>
-    <p>
-  Explore more technology at
-  <a href="https://www.samsung.com/" target="_blank" rel="noopener noreferrer">
-    Samsung Official Website
-  </a>.
-</p>
-    <p>Discover our collection of modern technology and electronic devices.</p>
-
-  <section id="products">
+<section id="products">
   <div class="section-heading">
     <h2>Featured Products</h2>
   </div>
@@ -150,8 +230,7 @@ body {
   <div class="products" id="productList">
 
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600"
-           alt="Laptop">
+      <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=600" alt="Laptop">
       <small>LAPTOPS</small>
       <h3>Premium Laptop</h3>
       <div class="price">$899.00</div>
@@ -159,8 +238,7 @@ body {
     </div>
 
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=300"
-           alt="Headphones">
+      <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=600" alt="Headphones">
       <small>AUDIO</small>
       <h3>Wireless Headphones</h3>
       <div class="price">$129.00</div>
@@ -168,69 +246,119 @@ body {
     </div>
 
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300"
-           alt="Smartphone">
+      <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=600" alt="Smartphone">
       <small>SMARTPHONES</small>
       <h3>Modern Smartphone</h3>
       <div class="price">$699.00</div>
       <button class="btn" onclick="addToCart('Modern Smartphone')">Add to Cart</button>
     </div>
-    
-<div class="product">
-  <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=300" alt="Tablet">
-  <small>TABLETS</small>
-  <h3>Premium Tablet</h3>
-  <div class="price">$499.00</div>
-  <button class="btn" onclick="addToCart('Premium Tablet')">Add to Cart</button>
-</div>
 
-<div class="product">
-  <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300" alt="Smartwatch">
-  <small>ACCESSORIES</small>
-  <h3>Smartwatch</h3>
-  <div class="price">$199.00</div>
-  <button class="btn" onclick="addToCart('Smartwatch')">Add to Cart</button>
-</div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600" alt="Tablet">
+      <small>TABLETS</small>
+      <h3>Premium Tablet</h3>
+      <div class="price">$499.00</div>
+      <button class="btn" onclick="addToCart('Premium Tablet')">Add to Cart</button>
+    </div>
 
-<div class="product">
-  <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?w=300" alt="Keyboard">
-  <small>GAMING</small>
-  <h3>Gaming Keyboard</h3>
-  <div class="price">$89.00</div>
-  <button class="btn" onclick="addToCart('Gaming Keyboard')">Add to Cart</button>
-</div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600" alt="Smartwatch">
+      <small>ACCESSORIES</small>
+      <h3>Smartwatch</h3>
+      <div class="price">$199.00</div>
+      <button class="btn" onclick="addToCart('Smartwatch')">Add to Cart</button>
+    </div>
 
-<div class="product">
-  <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?w=300" alt="Mouse">
-  <small>ACCESSORIES</small>
-  <h3>Wireless Mouse</h3>
-  <div class="price">$49.00</div>
-  <button class="btn" onclick="addToCart('Wireless Mouse')">Add to Cart</button>
-</div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1595225476474-87563907a212?w=600" alt="Keyboard">
+      <small>GAMING</small>
+      <h3>Gaming Keyboard</h3>
+      <div class="price">$89.00</div>
+      <button class="btn" onclick="addToCart('Gaming Keyboard')">Add to Cart</button>
+    </div>
 
-<div class="product">
-  <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=300" alt="Camera">
-  <small>CAMERAS</small>
-  <h3>Digital Camera</h3>
-  <div class="price">$599.00</div>
-  <button class="btn" onclick="addToCart('Digital Camera')">Add to Cart</button>
-</div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1527814050087-3793815479db?w=600" alt="Mouse">
+      <small>ACCESSORIES</small>
+      <h3>Wireless Mouse</h3>
+      <div class="price">$49.00</div>
+      <button class="btn" onclick="addToCart('Wireless Mouse')">Add to Cart</button>
+    </div>
 
-<div class="product">
-  <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=300" alt="Speaker">
-  <small>AUDIO</small>
-  <h3>Bluetooth Speaker</h3>
-  <div class="price">$79.00</div>
-  <button class="btn" onclick="addToCart('Bluetooth Speaker')">Add to Cart</button>
-</div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=600" alt="Camera">
+      <small>CAMERAS</small>
+      <h3>Digital Camera</h3>
+      <div class="price">$599.00</div>
+      <button class="btn" onclick="addToCart('Digital Camera')">Add to Cart</button>
+    </div>
 
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=600" alt="Speaker">
+      <small>AUDIO</small>
+      <h3>Bluetooth Speaker</h3>
+      <div class="price">$79.00</div>
+      <button class="btn" onclick="addToCart('Bluetooth Speaker')">Add to Cart</button>
+    </div>
 
+  </div>
+
+  <div class="info-section">
+    <h2>Explore More Technology</h2>
+    <p>Visit Samsung's official website to explore more technology products.</p>
+    <a href="https://www.samsung.com/" target="_blank" rel="noopener noreferrer">
+      Samsung Official Website
+    </a>
+    <p>Explore our downloadable product catalog:</p>
+    <a href="TechStore_Product_Catalog.pdf" download>
+      Download Product Catalog (PDF)
+    </a>
   </div>
 </section>
 
 <footer>
-    <p>&copy; 2026 TechStore. All Rights Reserved.</p>
+  <div class="logo">Tech<span>Store.</span></div>
+  <p>Your destination for modern technology.</p>
+  <p>© 2026 TechStore. All rights reserved.</p>
 </footer>
+
+<nav class="bottom-nav">
+  <a href="index.html">
+    <span>⌂</span>
+    Home
+  </a>
+  <a href="products.html">
+    <span>▣</span>
+    Products
+  </a>
+  <a href="about.html">
+    <span>ⓘ</span>
+    About
+  </a>
+  <a href="contact.html">
+    <span>♙</span>
+    Contact
+  </a>
+</nav>
+
+<script>
+let cartCount = 0;
+
+function addToCart(product) {
+  cartCount++;
+  document.getElementById("cartCount").textContent = cartCount;
+  alert(product + " added to your cart!");
+}
+
+document.getElementById("search").addEventListener("input", function() {
+  const query = this.value.toLowerCase();
+
+  document.querySelectorAll(".product").forEach(function(item) {
+    item.style.display = item.textContent.toLowerCase().includes(query)
+      ? "block" : "none";
+  });
+});
+</script>
 
 </body>
 </html>
